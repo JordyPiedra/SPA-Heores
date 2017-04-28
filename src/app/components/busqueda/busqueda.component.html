@@ -1,0 +1,21 @@
+<h3>Resultado de búsqueda</h3>
+<h1> Buscando:  <small>{{patron}}</small></h1>
+<div *ngIf="heroes.length<1" class="row animater fadeIn fast">   
+<div class="alert alert-danger" role="alert">
+  <strong>No existen resultados!</strong> Intenta probando otras búsquedas
+</div>
+</div>
+  <div class="card-columns">
+  <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index;">
+    <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+    <div class="card-block">
+      <h4 class="card-title">{{ heroe.nombre }}</h4>
+      <p class="card-text"> {{ heroe.bio }} </p>
+      <p class="card-text"><small class="text-muted"> {{ heroe.aparicion }} </small></p>
+      <a [routerLink]="['/heroe',i+1]" class="btn btn-outline-primary btn-block"> Ver más...</a>
+      <!--<button (click) = "verHeroe(i+1)"-->
+      <!--type="button" class="btn btn-outline-primary btn-block"> Ver más... </button>-->
+    </div>
+  </div>
+  
+  </div>
